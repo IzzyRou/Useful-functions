@@ -11,8 +11,7 @@
 se <- function(x) sd(x)/sqrt(length(x))
 
 ##95%CI, t distribution or norm from http://www.cyclismo.org/tutorial/R/confidence.html
-
-#' Title
+#' normCI
 #'
 #' @param n number in popularion
 #' @param s standard deviation
@@ -34,8 +33,9 @@ CI<-function(n,s,a, type="normal"){
   return(c(left,right))
 }
 
-##95%CI bootstrapping mean
-#' Title
+######
+#' bootstrapMean
+#' 95%CI bootstrapping mean
 #'
 #' @param x data
 #' @param n size of sample
@@ -96,9 +96,9 @@ daily.incidence.group<-function(obs.date,obs.group){
   return (incidence)
 }
 
-###### Force of Infection
-#' Title
-#'
+######
+#' dailyFOI
+#'Force of Infection
 #' @param incidence timeseries incidence
 #' @param n number
 #' @param t time
@@ -126,7 +126,17 @@ daily.foi.group<-function(incidence,n,t,SI){
   return (foi)
 }
 
-#### discrete SI
+####
+#' discreteSI
+#'creates discrete serial interval
+#' @param mu
+#' @param CV
+#' @param SItrunc
+#'
+#' @return
+#' @export
+#'
+#' @examples
 DiscretizeSI <- function(mu,CV,SItrunc){
   SIdistr <- sapply(0:SItrunc, function(k) EpiEstim::DiscrSI(k, mu, CV*mu))
   SIdistr <- SIdistr/sum(SIdistr)
@@ -135,8 +145,9 @@ DiscretizeSI <- function(mu,CV,SItrunc){
 
 
 
-#####continuous colour scale for base plot
-#' Title
+#############
+#' legendCol
+#' continuous colour scale for base plot
 #'
 #' @param col
 #' @param lev
