@@ -1,5 +1,4 @@
 
-#
 # Some useful keyboard shortcuts for package authoring:
 #
 #   Build and Reload Package:  'Ctrl + Shift + B'
@@ -11,13 +10,24 @@
 ##STANDARD ERROR###
 se <- function(x) sd(x)/sqrt(length(x))
 
-##95%CI, t distribution or norm
+##95%CI, t distribution or norm from http://www.cyclismo.org/tutorial/R/confidence.html
 
+#' Title
+#'
+#' @param n number in popularion
+#' @param s standard deviation
+#' @param a mean
+#' @param type "normal" or "t" at moment
+#'
+#' @return
+#' @export
+#'
+#' @examples
 CI<-function(n,s,a, type="normal"){
   if(type=="normal"){
-    error <- qt(0.975,df=n-1)*s/sqrt(n)
+    error <- qnorm(0.975)*s/sqrt(n)
 
-  }else{error <-qnorm(0.975)*s/sqrt(n)}
+  }else{error <-qt(0.975,df=n-1)*s/sqrt(n)}
 
   left <- a-error
   right <- a+error
@@ -25,6 +35,16 @@ CI<-function(n,s,a, type="normal"){
 }
 
 ##95%CI bootstrapping mean
+#' Title
+#'
+#' @param x data
+#' @param n size of sample
+#' @param nboot number bootstrap samples
+#'
+#' @return
+#' @export
+#'
+#' @examples
 bootstrap<-function(x,n,nboot=100000){
   # Data for the example 6
   # sample mean
@@ -49,6 +69,15 @@ bootstrap<-function(x,n,nboot=100000){
 }
 
 ### incidence per group per day
+#' Title
+#'
+#' @param obs.date date case observed
+#' @param obs.group name of group observed e.g. age class, sex
+#'
+#' @return
+#' @export
+#'
+#' @examples
 daily.incidence.group<-function(obs.date,obs.group){
   group<-obs.group
   date.range<-c(min(obs.date),max(obs.date))
@@ -68,6 +97,17 @@ daily.incidence.group<-function(obs.date,obs.group){
 }
 
 ###### Force of Infection
+#' Title
+#'
+#' @param incidence timeseries incidence
+#' @param n number
+#' @param t time
+#' @param SI serial interval distribution
+#'
+#' @return
+#' @export
+#'
+#' @examples
 daily.foi.group<-function(incidence,n,t,SI){
   foi<-incidence
   foi[,2:n]<-0
@@ -93,6 +133,8 @@ DiscretizeSI <- function(mu,CV,SItrunc){
   return(SIdistr)
 }
 
+
+####bob functions####
 
 # -----------------------------------
 #' safeRead
