@@ -8,3 +8,5 @@ Description: My useful functions, many from bobFunctions. Hope, but can't guaran
 License: MIT
 Encoding: UTF-8
 LazyData: true
+NeedsCompilation: no
+Packaged: 2017-06-15 11:20:02 UTC; ir515

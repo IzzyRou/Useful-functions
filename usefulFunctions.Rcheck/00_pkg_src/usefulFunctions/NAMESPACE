@@ -1,0 +1,13 @@
+exportPattern("^[[:alpha:]]+")
+importFrom("grDevices", "col2rgb", "colorRampPalette", "colors",
+             "dev.off", "grey", "jpeg", "pdf", "png", "rgb")
+  importFrom("graphics", "axis", "box", "contour", "hist", "image",
+             "legend", "lines", "mtext", "par", "plot", "polygon",
+             "segments", "text", "title")
+  importFrom("methods", "slot")
+  importFrom("stats", "density", "dnbinom", "median", "qf", "qnorm",
+             "qt", "quantile", "rbeta", "rbinom", "rgamma", "rnorm",
+             "sd", "spline")
+  importFrom("utils", "flush.console", "install.packages",
+             "installed.packages", "read.delim", "type.convert",
+             "write.table")

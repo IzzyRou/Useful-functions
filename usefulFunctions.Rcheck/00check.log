@@ -1,0 +1,16 @@
+* using log directory 'C:/Users/ir515/Documents/GitHub/Useful-functions/usefulFunctions.Rcheck'
+* using R version 3.3.2 (2016-10-31)
+* using platform: x86_64-w64-mingw32 (64-bit)
+* using session charset: ISO8859-1
+* checking for file 'usefulFunctions/DESCRIPTION' ... OK
+* checking extension type ... Package
+* this is package 'usefulFunctions' version '0.1.0'
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... ERROR
+Namespace dependency not required: 'methods'
+
+See section 'The DESCRIPTION file' in the 'Writing R Extensions'
+manual.
+* DONE
+Status: 1 ERROR
