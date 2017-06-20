@@ -143,6 +143,13 @@ DiscretizeSI <- function(mu,CV,SItrunc){
   return(SIdistr)
 }
 
+######Raleigh likelihood, hazard and survival functions ####
+
+Hral<-function(a,t) a*t
+Sral<-function(a,t) exp(-a*0.5*t^2)
+Lral<-function(t,a) a*t*exp(-a*0.5*t^2)
+
+
 
 
 #############
